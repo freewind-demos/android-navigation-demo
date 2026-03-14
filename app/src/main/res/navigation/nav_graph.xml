@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/homeFragment">
+
+    <!-- Home Fragment -->
+    <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.example.demo.HomeFragment"
+            android:label="首页"
+            tools:layout="@layout/fragment_home">
+
+        <!-- 导航到详情页 -->
+        <action
+                android:id="@+id/action_homeFragment_to_detailFragment"
+                app:destination="@id/detailFragment"
+                app:enterAnim="@android:anim/fade_in"
+                app:exitAnim="@android:anim/fade_out"
+                app:popEnterAnim="@android:anim/fade_in"
+                app:popExitAnim="@android:anim/fade_out"/>
+    </fragment>
+
+    <!-- Detail Fragment -->
+    <fragment
+            android:id="@+id/detailFragment"
+            android:name="com.example.demo.DetailFragment"
+            android:label="详情页"
+            tools:layout="@layout/fragment_detail">
+
+        <!-- 接收参数 -->
+        <argument
+                android:name="message"
+                app:argType="string"
+                android:defaultValue="Hello"/>
+    </fragment>
+
+</navigation>
